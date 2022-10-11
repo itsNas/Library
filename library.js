@@ -1,11 +1,20 @@
-// Book Class: Represent a book
+// UI elements
+const addBookBtn = document.getElementById('addBookBtn');
+const addBookModal = document.getElementById('addBookModal');
+const overlay = document.getElementById('overlay');
+const addBookForm = document.getElementById('addBookForm');
+const booksGrid = document.getElementById('booksGrid');
 
-//  UI Class: Handle UI task
+// setup modal popup
+const openModal = () => {
+    addBookModal.classList.add('active');
+    overlay.classList.add('active');
+};
 
-// Store Class: Handle storage
+const closeModal = () => {
+    addBookModal.classList.remove('active');
+    overlay.classList.remove('active');
+};
 
-// Event: Display books
-
-// Event: Add a book
-
-// Event: Remove a book
+addBookBtn.onclick = openModal;
+overlay.onclick = closeModal;
