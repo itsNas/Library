@@ -52,7 +52,46 @@ class Library {
 
 const library = new Library();
 
+const addBook = (e) => {
+    e.preventDefault()
+    const newBook = getInput()
+
+    library.addBook(newBook)
+    saveLocal()
+    updateBooksGrid()
+
+    // if (library.isInLibrary(newBook)) {
+    //     errorMsg.textContent = 'This book already exists in your library'
+    //     errorMsg.classList.add('active')
+    //     return
+    // }
+
+}
+
+const getInput = () => {
+    const title = document.getElementById('title').value
+    const author = document.getElementById('author').value
+    const pages = document.getElementById('pages').value
+    const isRead = document.getElementById('isRead').ariaChecked
+    return new Book(title, author, pages, isRead)
+}
+
+const updateBooksGrid = () => {
+    resetBooksGrid()
+    for (let book of library.books) {
+        createBookCard(book)
+    }
+}
+
+const resetBooksGrid = () => {
+    booksGrid.innerText = ''
+}
+
+const createBookCard = (book) => {}
+
+const saveLocal = () => {}
+
 
 addBookBtn.onclick = openModal;
 overlay.onclick = closeModal;
-// addBookForm.onsubmit = addBook;
+addBookForm.onsubmit = addBook;
