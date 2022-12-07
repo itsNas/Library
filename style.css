@@ -9,10 +9,10 @@
     margin: 0;
 }
 
-html {
-    /* This is for footer */
-    /* position: relative; */
-}
+/* html {
+    This is for footer
+    position: relative;
+} */
 
 body {
     font-family: Roboto, sans-serif;
@@ -40,11 +40,28 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.2rem;
-    margin-top: 1.2rem;
+    margin: 1.2rem;
+    /* justify-items: center;
+    align-items: center; */
 }
 
 /* book card */
+.book-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    gap: 1rem;
+    padding: 1.2rem;
+    border-radius: 10px;
+    background-color: rgb(202, 55, 55);
+    width: 300px
+}
 
+.button-group {
+    display: flex;
+    flex-direction: column;
+}
 
 /* Modal Popup */
 .modal {
@@ -120,5 +137,3 @@ input[type='text'],
 input[type='number'] {
     cursor: text;
 }
-
-/*dan bila kau menghilang*/
